@@ -8,13 +8,8 @@ router.get('/', (req, res) => {
     include: [
       {
         model: Product,
-        attributes: ['id', 'product_name', 'price', 'stock', 'category_id'],
-        include: {
-            model: ProductTag,
-            attributes: ['id', 'product_id', 'tag_id']
-          }
-      },
-    ]
+        through: ProductTag
+      }]
   })
     .then(dbTagData => res.json(dbTagData))
     .catch(err => {
@@ -32,14 +27,8 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Product,
-        attributes: ['id', 'product_name', 'price', 'stock', 'category_id'],
-        include: {
-            model: ProductTag,
-            attributes: ['id', 'product_id', 'tag_id']
-          }
-      },
-      
-    ]
+        through: ProductTag
+      }]
   })
     .then(dbTagData => {
       if (!dbTagData) {
