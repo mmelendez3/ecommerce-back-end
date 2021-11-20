@@ -14,19 +14,19 @@ Category.hasMany(Product, {
   foreignKey: 'category_id'
 });
 
-// // Products belongToMany Tags (through ProductTag)
-// Product.belongsToMany(Tag, {
-//   through: ProductTag,
-//   as: 'product_tag',
-//   foreignKey: 'product_id'
-// });
+// Products belongToMany Tags (through ProductTag)
+Product.belongsToMany(Tag, {
+  through: ProductTag,
+  as: 'product_tag',
+  foreignKey: 'product_id'
+});
 
-// // Tags belongToMany Products (through ProductTag)
-// Tag.belongsToMany(Product, {
-//   through: ProductTag,
-//   as: 'product_tag',
-//   foreignKey: 'product_id'
-// });
+// Tags belongToMany Products (through ProductTag)
+Tag.belongsToMany(Product, {
+  through: ProductTag,
+  as: 'tag_id',
+  foreignKey: 'tag_id'
+});
 
 
 module.exports = {
