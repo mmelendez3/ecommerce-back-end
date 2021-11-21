@@ -16,7 +16,7 @@
 - [Questions](#questions)
 
 ## Description
-This is a command-line application built to help manage a company's employee database, using Node.js, Inquirer, and My SQL.
+This project comprises of back-end code for an e-commerce website that configures a working Express.js API into Sequelize to interact with a MySQL database.
 
 ## User Story
 ```
